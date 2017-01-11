@@ -61,6 +61,7 @@ function wfAjaxLoader_ajax($parser, $opentext, $closetext, $aftertext, $page, $p
 {
     $parser->getOutput()->addModules('AjaxLoader');
     return $parser->insertStripItem(
+        '<span class="ajaxLoadHeaderClosed">'.
         '<a data-closetext="'.htmlspecialchars($closetext).
         '" data-page="'.htmlspecialchars($page).
         '" data-params="'.htmlspecialchars($params).
@@ -68,5 +69,5 @@ function wfAjaxLoader_ajax($parser, $opentext, $closetext, $aftertext, $page, $p
         $opentext.
         $parser->insertStripItem('</a>').
         ($aftertext ? " $aftertext " : '').
-        $parser->insertStripItem('<div style="display: none" class="ajaxLoader"></div>');
+        $parser->insertStripItem('</span><div style="display: none" class="ajaxLoader ajaxLoaderClosed"></div>');
 }
