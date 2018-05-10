@@ -37,7 +37,7 @@ $wgExtensionCredits['parserhook'][] = array(
     'version'     => '2016-06-01',
 );
 
-function wfAjaxLoaderParserFirstCallInit(&$parser)
+function wfAjaxLoaderParserFirstCallInit($parser)
 {
     $parser->setFunctionHook('request', 'wfAjaxLoader_request');
     $parser->setFunctionHook('ajax', 'wfAjaxLoader_ajax');
